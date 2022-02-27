@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Add Text Fields</title>
+    <style>
+        .table-container {
+            width: 60%;
+            margin: 0 auto;
+            border: 1px solid;
+        }
+        table {
+            width: 100%;
+        }
+       table, th, td {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table>
+           
+            <thead>
+                <tr>
+                    <th>SL</th>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Passing Year</th>
+                    <div align="right"><input type="button" value="+" onclick="addItem()"></div>
+                </tr>
+
+               
+            </thead>
+           
+            <tbody id="table-body">
+               
+            </tbody>
+        </table>
+    </div>
+    <script>
+
+        var i = 1; // initilize and assigned value 1 in i;
+        function addItem(){
+                // create elment tr(table row) of table
+                let tableRow = document.createElement("tr");
+               
+                // add td and input text fild
+                tableRow.innerHTML = "<td>"+i+"</td><td><input type=text></td><td><input type=text></td><td><input type=number></td>";
+              
+                // catch table body section 
+                let tableBody = document.getElementById('table-body');
+
+                //append table row in table body
+                tableBody.appendChild(tableRow);
+
+                // increment i value
+                i++;
+
+        }
+    </script>
+</body>
+</html>
